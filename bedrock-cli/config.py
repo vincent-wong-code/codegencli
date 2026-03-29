@@ -1,5 +1,11 @@
 import os
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 SYSTEM_PROMPT_FILE = "system_prompt.txt"
 MAX_TOKENS = 4096
